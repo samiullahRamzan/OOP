@@ -14,27 +14,32 @@ public class Main {
         System.out.println("Name:"+name);
         System.out.println("Amount:"+amount);
 
-        BankAccount account=new BankAccount();
-        account.name=name;
-        account.balance=amount;
+        BankAccount account=new BankAccount(amount,name);
+        int input;
+        account.displayMenu();
+        do{
+            System.out.print("Enter your choice: ");
+            input=scanner.nextInt();
+            if(input==1){
+                System.out.println("Enter amount you want to deposit:");
+                amount=scanner.nextDouble();
+                account.deposit(amount);
+            }else if(input==2){
+                System.out.println("Enter amount you want to withdraw:");
+                amount=scanner.nextDouble();
+                account.withdraw(amount);
+            }else if(input==3){
+                System.out.println("current balance:"+account.getBalance());
+            }else if(input==4){
+                System.out.println("Program is terminated");
+                System.out.println("======End=====");
+            }else{
+                System.out.println("Invalid choice!");
+            }
 
-        System.out.println("Press 1 to 4");
-        int input=scanner.nextInt();
+        }while(input != 4);
 
-        if(input==1){
-            System.out.println("Enter amount you want to deposit:");
-            amount=scanner.nextDouble();
-            account.deposit(amount);
-        }else if(input==2){
-            System.out.println("Enter amount you want to withdraw:");
-            amount=scanner.nextDouble();
-            account.withdraw(amount);
-        }else if(input==3){
-            System.out.println("current balance:"+account.balance);
-        }else{
-            System.out.println("Invalid choice! Program is terminated");
-            return;
-        }
+        account.accountInfo();
 
         scanner.close();
     }
