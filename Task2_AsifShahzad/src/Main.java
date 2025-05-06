@@ -16,7 +16,9 @@ public class Main {
 
         BankAccount account=new BankAccount(amount,name);
         int input;
+        int input2;
         account.displayMenu();
+
         do{
             System.out.print("Enter your choice: ");
             input=scanner.nextInt();
@@ -27,6 +29,15 @@ public class Main {
             }else if(input==2){
                 System.out.println("Enter amount you want to withdraw:");
                 amount=scanner.nextDouble();
+                if(account.getBalance()>50000&&account.getBalance()-amount<50000){
+                    System.out.println("Are you sure you want to withdraw,it would make your balance below 50,000");
+                    System.out.print("Enter your choice: ");
+                    System.out.println("Press 1 to continue and 0 to abort");
+                    input2=scanner.nextInt();
+                    if(input2==0){
+                        continue;
+                    }
+                }
                 account.withdraw(amount);
             }else if(input==3){
                 System.out.println("current balance:"+account.getBalance());

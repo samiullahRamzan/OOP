@@ -27,20 +27,37 @@ public class BankAccount {
     }
 
     void deposit(double amount){
-        if (amount > 0) {
+        if (amount > 0 && balance<100000) {
             balance += amount;
             total_deposits++; // Increment deposit count
             System.out.println("Deposited: " + amount);
-        } else {
+        }else if(balance>=100000){
+            // new strategy implementation
+            balance+=(amount+amount/100);
+            total_deposits++; // Increment deposit count
+            System.out.println("Deposited: " + amount);
+        }
+        else {
             System.out.println("Deposit amount must be positive!");
         }
     }
 
     void withdraw(double amount){
         if(amount>0&&amount<=balance){
-            balance-=amount;
-            total_withdraw++;
-            System.out.println("Withdraw: " + amount);
+
+            if(balance-amount<50000){
+                // implemented a new strategy
+                System.out.println("Deduction 2% when balance is less than 50000");
+                double deductionamount=amount+amount*2/100;
+                balance-=deductionamount;
+                total_withdraw++;
+                System.out.println("Withdraw: " + amount);
+            }else{
+                balance-=amount;
+                total_withdraw++;
+                System.out.println("Withdraw: " + amount);
+            }
+
         }else {
             System.out.println("withdraw amount must be positive or less than equal to balance!");
         }
