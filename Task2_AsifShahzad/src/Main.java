@@ -15,6 +15,14 @@ public class Main {
         System.out.println("Amount:"+amount);
 
         BankAccount account=new BankAccount(amount,name);
+
+        account.account();
+
+        account.accountInfo();
+        System.out.println("Account balance before deduction:"+account.getBalance());
+        account.deductAnnualFee();
+        System.out.println("Account balance after deduction:"+account.getBalance());
+
         int input;
         int input2;
         account.displayMenu();
