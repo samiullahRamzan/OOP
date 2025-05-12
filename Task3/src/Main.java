@@ -19,16 +19,28 @@ public class Main {
 
 
         // Creating an account with an existing accountId
-        Account account = new Account(676786);
-        System.out.println("Account ID: " + account.getAccountId());
+//        Account account = new Account(676786);
+//        System.out.println("Account ID: " + account.getAccountId());
+//
+//        // Creating a new account with CNIC, name, and age
+//        Account newAccount = new Account("1234567890123", "Samiullah", 22);  // Valid age for creating account
+//        System.out.println("New Account Balance: " + newAccount.getBalance());
+//
+//        // Trying to create an account with an age below 20 (will not be created)
+//        Account invalidAccount = new Account("9876543210123", "Ali", 18);  // Invalid age for creating account
+//        System.out.println("Invalid Account Balance: " + invalidAccount.getBalance());  // Balance should not be set
 
-        // Creating a new account with CNIC, name, and age
-        Account newAccount = new Account("1234567890123", "Samiullah", 22);  // Valid age for creating account
-        System.out.println("New Account Balance: " + newAccount.getBalance());
+        Person p=new Person("Samiulllah",23);
 
-        // Trying to create an account with an age below 20 (will not be created)
-        Account invalidAccount = new Account("9876543210123", "Ali", 18);  // Invalid age for creating account
-        System.out.println("Invalid Account Balance: " + invalidAccount.getBalance());  // Balance should not be set
+        System.out.println("here is date of birth:"+p.getDateOfBirth());
 
+        Person p1=new Person("Abdullah",p.getDateOfBirth());
+
+        System.out.println("Age of a user:\t"+p1.getAge());
+        p1.setWeight(86);
+        p1.setHeight(6);
+        System.out.println("BMI of a user:\t"+p1.getBMI());
+
+        System.out.println("BMIHelp for a user:\t"+p1.getBMIHelp(p1.getBMI()));
     }
 }
