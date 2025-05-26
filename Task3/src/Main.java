@@ -37,7 +37,7 @@ public class Main {
         Person p1=new Person("Abdullah",p.getDateOfBirth());
 
         System.out.println("Age of a user:\t"+p1.getAge());
-        p1.setWeight(86);
+        p1.setWeight(82);
         p1.setHeight(6);
         System.out.println("BMI of a user:\t"+p1.getBMI());
 

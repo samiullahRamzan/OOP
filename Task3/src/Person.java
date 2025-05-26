@@ -27,9 +27,13 @@ public class Person {
         return height;
     }
 
+    public double feetToMeters(double feet) {
+        return feet * 0.3048;
+    }
+
     public void setHeight(double height) {
         if(height>0){
-            this.height = height;
+            this.height = feetToMeters(height);
         }else{
             System.out.println("Height should be greater than 0");
         }
@@ -67,6 +71,8 @@ public class Person {
         LocalDate date=LocalDate.now();
         return date.getYear()-getDateOfBirth().getYear();
     }
+
+
 
     public double getBMI(){
         return getWeight()/(getHeight()*getHeight());
