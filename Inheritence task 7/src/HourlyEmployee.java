@@ -4,8 +4,8 @@ public class HourlyEmployee extends Employee {
 
     public HourlyEmployee(String firstName, String lastName, String CNIC, double hour, double wage) {
         super(firstName, lastName, CNIC);
-        this.hour = hour;
-        this.wage = wage;
+        setHour(hour);
+        setWage(wage);
     }
 
     public double earnings(){
@@ -15,7 +15,6 @@ public class HourlyEmployee extends Employee {
             return (40 * wage) + ((hour - 40) * wage * 1.5);
         }
     }
-
 
     public double getHour() {
         return hour;
