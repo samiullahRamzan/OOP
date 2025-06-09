@@ -11,6 +11,12 @@ public class Employee {
         setCNIC(CNIC);
     }
 
+    public Employee(String firstName,String lastName,String CNIC){
+        setFirstName(firstName);
+        setLastName(lastName);
+        setCNIC(CNIC);
+    }
+
     public Employee(){
 
     }
