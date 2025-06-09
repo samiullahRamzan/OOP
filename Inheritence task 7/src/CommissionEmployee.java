@@ -18,8 +18,19 @@ public class CommissionEmployee extends Employee {
       return super.toString()+"CommissionRate:"+getCommissionRate()+"\n"+"TotalSales:"+getTotalSales()+"\n";
     }
 
-    public double getEarnings(){
-        return getCommissionRate()*getTotalSales();
+    public double getEarnings() {
+        double commission = getCommissionRate() * getTotalSales();
+        double bonus = 0;
+
+        if (commission >= 10000 && commission <= 20000) {
+            bonus = 5000;
+        } else if (commission > 20000 && commission <= 50000) {
+            bonus = 10000;
+        } else if (commission > 50000) {
+            bonus = 20000;
+        }
+
+        return commission + bonus;
     }
 
 
