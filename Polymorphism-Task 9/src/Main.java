@@ -43,15 +43,32 @@ public class Main {
 //      // Here is total painting cost
         TotalPaintingCost=circlePaintingCost+rectanglePaintingCost+trianglePaintingCost+squarePaintingCost;
 
-        System.out.print("Total circles: "+TotalCircles+",\t"+"Total area of all circles: "+areaOfCircles+",\t"+"PaintingCost: "+circlePaintingCost);
-        System.out.println();
-        System.out.print("Total rectangles: "+TotalRectangles+",\t"+"Total area of all rectangles: "+areaOfRectangles+",\t"+"PaintingCost: "+rectanglePaintingCost);
-        System.out.println();
-        System.out.print("Total triangles: "+TotalTriangles+",\t"+"Total area of all triangles: "+areaOfTriangles+",\t"+"PaintingCost: "+trianglePaintingCost);
-        System.out.println();
-        System.out.print("Total squares: "+TotalSquares+",\t"+"Total area of all squares: "+areaOfSquares+",\t"+"PaintingCost: "+squarePaintingCost);
-        System.out.println();
-        System.out.println("Total painting cost: "+TotalPaintingCost);
+        // Display total circles info only if there are circles
+        if (TotalCircles > 0) {
+            System.out.print("Total circles: " + TotalCircles + ",\t" + "Total area of all circles: " + areaOfCircles + ",\t" + "PaintingCost: " + circlePaintingCost);
+            System.out.println();
+        }
+
+// Display total rectangles info only if there are rectangles
+        if (TotalRectangles > 0) {
+            System.out.print("Total rectangles: " + TotalRectangles + ",\t" + "Total area of all rectangles: " + areaOfRectangles + ",\t" + "PaintingCost: " + rectanglePaintingCost);
+            System.out.println();
+        }
+
+// Display total triangles info only if there are triangles
+        if (TotalTriangles > 0) {
+            System.out.print("Total triangles: " + TotalTriangles + ",\t" + "Total area of all triangles: " + areaOfTriangles + ",\t" + "PaintingCost: " + trianglePaintingCost);
+            System.out.println();
+        }
+
+// Display total squares info only if there are squares
+        if (TotalSquares > 0) {
+            System.out.print("Total squares: " + TotalSquares + ",\t" + "Total area of all squares: " + areaOfSquares + ",\t" + "PaintingCost: " + squarePaintingCost);
+            System.out.println();
+        }
+
+// Display total painting cost
+        System.out.println("Total painting cost: " + TotalPaintingCost);
 
 
     }
