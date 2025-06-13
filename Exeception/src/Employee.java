@@ -12,6 +12,9 @@ public class Employee {
     }
 
     public void setId(int id) {
+        if(id<=0){
+            throw new IllegalArgumentException("Id must be positive");
+        }
         this.id = id;
     }
 
