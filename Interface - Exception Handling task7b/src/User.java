@@ -40,7 +40,7 @@ public class User {
     // Override equals to compare based on 'id'
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true; // Same reference, no need to compare further
+        if (this == obj) return true; // Same reference, no need to compare further or super.equals(obj)
         if (obj == null || getClass() != obj.getClass()) return false; // Check for null or different types
         User user = (User) obj; // Cast the object to a User
         return id == user.id; // Compare by id
